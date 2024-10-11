@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Manualform.module.css";
 import bannerimg from "../Images/form.png";
 import logo from "../Images/Logo.png";
 function Manualform() {
   const [isLoading, setIsLoading] = useState(false);
-
+  const navigate=useNavigate();
   function handleAnalyse() {
     const Claims = document.querySelector("#Claims").value;
     const Ingredients = document.querySelector("#Ingredients").value;
@@ -28,6 +29,10 @@ function Manualform() {
       .then((data) => {
         setIsLoading(false);
         console.log(data);
+        if (data){
+          navigate("/ClaimCheckOptions/Manualform/Output", { state: { data: data } });
+        }
+        
       });
   }
 
@@ -47,7 +52,7 @@ function Manualform() {
           <textarea rows="4" type="text" id="Ingredients" placeholder="Enter Ingredients"/>
         </div>
 
-        <button className={styles.Button} id="Analyse" onClick={handleAnalyse}>{isLoading?`Checking...`:`Analyze`}</button>
+        <button className={styles.Button} id="Analyse" disabled={isLoading} onClick={handleAnalyse}>{isLoading?`Checking...`:`Analyze`}</button>
       </div>
 
       <div className={styles.formBanner}>

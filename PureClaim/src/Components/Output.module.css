@@ -1,0 +1,25 @@
+.Output{
+ width: 80%;
+ margin: 2rem auto;
+ display: flex;
+ background-color:rgb(218, 240, 184);
+ border-radius: 20px;
+}
+.OutputImage{
+     width: 30%;
+}
+.OutputImage img{
+    width: 100%;
+}
+.OutputText{
+        padding: 20px;
+        width: 70%;
+        font-weight: 500;
+        text-align: center;
+}
+.verdict{
+    font-size: 25px;
+}
+.display{
+    display: none;
+}
