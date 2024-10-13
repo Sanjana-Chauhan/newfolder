@@ -8,7 +8,7 @@ function ImageForm() {
         <img src={AddImg} className={styles.AddImg} />
         <p className={styles.AddImgText}>Drop Image Here Or Browse</p>
       </div>
-      <Button btn_label="Upload"/>
+      <Button btn_label="Upload" />
     </div>
   );
 }
