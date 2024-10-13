@@ -31,7 +31,7 @@ function Output() {
           <p className={styles.reason}>No data available</p>
         )}
         {data ? (
-          <p className={`${styles.reason} display`} id="Details">
+          <p className="display" id="Details">
             {output.detailed_analysis}{" "}
           </p>
         ) : (
