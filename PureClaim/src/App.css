@@ -41,3 +41,12 @@
 .LPimg{
   width: 30%;
 }
+.seeMore{
+   border-radius: 30px;
+}
+.seeMore:hover{
+  box-shadow: 0px 0px 10px rgb(2, 65, 8);
+}
+.display{
+  display: none;
+}
