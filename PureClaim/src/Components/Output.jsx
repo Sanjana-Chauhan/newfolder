@@ -42,10 +42,10 @@ function Output() {
         ) : (
           <p className={styles.reason}>No data available</p>
         )}
-
-
-        {isTextVisible && data ? (
-          <p className={styles.reason}>{output.detailed_analysis} </p>
+        {data ? (
+          <p className={`${styles.reason} display`} id="Details">
+            {output.detailed_analysis}{" "}
+          </p>
         ) : (
           <p className={styles.reason}></p>
         )}
