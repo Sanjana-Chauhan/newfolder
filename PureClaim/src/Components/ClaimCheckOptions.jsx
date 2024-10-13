@@ -18,7 +18,7 @@ function ClaimCheckOptions() {
       text: "Manual Verification",
     },
     {
-      path: "/ClaimCheckOptions/MediaVeriFy",
+      path: "/ClaimCheckOptions/ImageForm",
       img: Vimage,
       text: "Image Verification",
     },

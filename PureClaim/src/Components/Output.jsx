@@ -9,10 +9,19 @@ function Output() {
   const [isMore, setIsMore] = useState(false);
   const Details = document.querySelector("#Details");
 
-  function HandleSeeMore() {
-    Details.classList.toggle("display");
-    setIsMore(!isMore);
-  }
+  // function HandleSeeMore() {
+  //   Details.classList.toggle("display");
+  //   setIsMore(!isMore);
+  // }
+
+  const [isTextVisible, setIsTextVisible] = useState(false);
+
+  console.log(isTextVisible)
+  // Function to toggle visibility
+  const toggleText = () => {
+    setIsTextVisible(!isTextVisible);
+    
+  };
 
   return (
     <div className={styles.Output}>
@@ -20,30 +29,33 @@ function Output() {
         <img src={outputImg} className="image" />
       </div>
       <div className={styles.OutputText}>
+
         {data ? (
           <p className={styles.verdict}>{output.verdict}</p>
         ) : (
           <p className={styles.verdict}>No data available</p>
         )}
+
+
         {data ? (
           <p className={styles.reason}>{output.why}</p>
         ) : (
           <p className={styles.reason}>No data available</p>
         )}
-        {data ? (
-          <p className={`${styles.reason} display`} id="Details">
-            {output.detailed_analysis}{" "}
-          </p>
+
+
+        {isTextVisible && data ? (
+          <p className={styles.reason}>{output.detailed_analysis} </p>
         ) : (
-          <p className={styles.reason}>No data available</p>
+          <p className={styles.reason}></p>
         )}
 
         <button
           className="btn btn-success seeMore"
           id="SeeMoreBtn"
-          onClick={HandleSeeMore}
+          onClick={toggleText}
         >
-          {isMore ? "See Less...":"See More..." }
+          {isTextVisible ? "See Less..." : "See More..."}
         </button>
       </div>
     </div>
