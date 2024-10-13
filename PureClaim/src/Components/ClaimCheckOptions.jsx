@@ -35,7 +35,7 @@ function ClaimCheckOptions() {
 
       <div className="cardContainer">
         {methods.map((item) => (
-          <VerificationCard key={item} val={item} />
+          <VerificationCard key={item.text} val={item} />
         ))}
       </div>
     </section>
