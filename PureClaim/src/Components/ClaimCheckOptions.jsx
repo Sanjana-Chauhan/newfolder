@@ -3,6 +3,7 @@ import Vurl from "../Images/approved.png";
 import Vtext from "../Images/clipboard.png";
 import Vimage from "../Images/camera.png";
 import "../App.css";
+import styles from "./ClaimCheckOptions.module.css"
 import Vbarcode from "../Images/barcode.png";
 
 function ClaimCheckOptions() {
@@ -10,30 +11,33 @@ function ClaimCheckOptions() {
     {
       path: "/ClaimCheckOptions/urlform",
       img: Vurl,
-      text: "Url Verification",
+      head: "Url Verification",
+      text:"Verify the brand's claims by manually entering the ingredients and product details...",
     },
     {
       path: "/ClaimCheckOptions/Manualform",
       img: Vtext,
-      text: "Manual Verification",
+      head: "Manual Verification",
+      text:"Snap a picture of the product's packaging or label,for verification. Fast and simple!",
     },
     {
       path: "/ClaimCheckOptions/ImageForm",
       img: Vimage,
-      text: "Image Verification",
+      head: "Image Verification",
+      text:"Paste the URL of the product page, and we'll cross-check the claims and ingredients automatically.",
     },
-    {
-      path:"/ClaimCheckOptions/BarcodeVerify",
-      img: Vbarcode,
-      text: "Barcode Verification",
-    },
+    // {
+    //   path:"/ClaimCheckOptions/BarcodeVerify",
+    //   img: Vbarcode,
+    //   text: "Barcode Verification",
+    // },
   ];
 
   return (
-    <section className="VerificationMethods text-center">
-      <h2 className="Heading">Select Verification Method</h2>
+    <section className={styles.VerificationMethods}>
+      {/* <h2 className={styles.Heading}>Select Verification Method</h2> */}
 
-      <div className="cardContainer">
+      <div className={styles.cardContainer}>
         {methods.map((item) => (
           <VerificationCard key={item.text} val={item} />
         ))}

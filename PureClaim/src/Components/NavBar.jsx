@@ -9,7 +9,8 @@ function NavBar() {
           <img src={logo} className={styles.logoImg}></img>
         </div>
         <div className={styles.navs}>
-            <Link  className={styles.links} to="/">Home</Link>
+            <Link  className={`${styles.links} ${styles.active} `} to="/">Home</Link>
+            <Link  className={styles.links} to="/">AboutUs</Link>
             <Link className={styles.links} to="/ClaimCheckOptions">ClaimCheck</Link>
             <Link className={styles.links} to="/">Blogs</Link>
             <Link className={styles.links} to="/">Contact Us</Link>

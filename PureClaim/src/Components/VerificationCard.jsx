@@ -3,12 +3,12 @@ import styles from "./VerificationCard.module.css";
 function VerificationCard({ val }) {
   return (
     <Link to={val.path} className={styles.Card}>
-      <div >
-        <img src={val.img} className={styles.CardImg}></img>
+      <div className={styles.CardImg}>
+        <img src={val.img} ></img>
       </div>
-      
-        <span className={styles.cardContent}>{val.text}</span>
-      
+        <span className={styles.cardHead}>{val.head}</span>
+        <p className={styles.cardContent}>{val.text}</p>
+        
     </Link>
   );
 }

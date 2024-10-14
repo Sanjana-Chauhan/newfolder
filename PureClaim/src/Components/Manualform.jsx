@@ -43,7 +43,7 @@ function Manualform() {
     
 
       <div className={styles.inputBox}>
-        <img src={logo} className="image"/>
+        <img src={logo} className={styles.logoImg}/>
         <span className={styles.Tag}>UNCOVER</span>
         <span className={styles.Title}>The FACTS In Label</span>
 

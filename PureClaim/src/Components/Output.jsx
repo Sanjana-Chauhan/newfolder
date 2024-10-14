@@ -6,8 +6,6 @@ function Output() {
   const location = useLocation();
   const { data } = location.state || {};
   const output = JSON.parse(data);
-  const [isMore, setIsMore] = useState(false);
-  const Details = document.querySelector("#Details");
 
   // function HandleSeeMore() {
   //   Details.classList.toggle("display");
@@ -16,8 +14,7 @@ function Output() {
 
   const [isTextVisible, setIsTextVisible] = useState(false);
 
-  console.log(isTextVisible)
-  // Function to toggle visibility
+
   const toggleText = () => {
     setIsTextVisible(!isTextVisible);
     
@@ -42,8 +39,8 @@ function Output() {
         ) : (
           <p className={styles.reason}>No data available</p>
         )}
-        {data ? (
-          <p className={`${styles.reason} display`} id="Details">
+        {data && isTextVisible ? (
+          <p className={styles.reason} id="Details">
             {output.detailed_analysis}{" "}
           </p>
         ) : (
